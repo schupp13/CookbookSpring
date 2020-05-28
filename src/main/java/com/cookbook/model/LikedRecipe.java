@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -17,11 +18,11 @@ public class LikedRecipe {
 	private int id;
 	
 	@ManyToOne
-	@JoinTable(name="user_id")
+	@JoinColumn(name="user_id")
 	private User user;
 	
 	@ManyToOne
-	@JoinTable(name="recipe_id")
+	@JoinColumn(name="recipe_id")
 	private Recipe recipe;
 	
 	

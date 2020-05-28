@@ -4,9 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.springframework.lang.NonNull;
 
 @Entity
 @Table(name="ingredient")
@@ -18,8 +21,10 @@ public class Ingredient {
 	
 	
 	@ManyToOne
-	@JoinTable(name="recipe_id")
+	@JoinColumn(name="recipe_id")
 	private Recipe recipe;
+	
+	@NonNull
 	private String name;
 	private String amount;
 	
