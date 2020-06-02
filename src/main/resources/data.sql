@@ -6,8 +6,9 @@ INSERT INTO USER(FIRST_NAME, LAST_NAME, PASSWORD,PROFILE_URL, USERNAME) VALUES
   ('Folrunsho','Pert', 'password', 'profile_url', 'user3');
 
 INSERT INTO COOKBOOK(DESCRIPTION,PIC,TITLE, USER_ID) VALUES
-  ('This is a description', 'food_porn_pic','Best cookbook of all time', 1),
-('This is a description', 'food_porn_pic','Second Best cookbook of all time', 1);
+('This is a description', 'food_porn_pic','Best cookbook of all time', 1),
+('This is a description', 'food_porn_pic','Second Best cookbook of all time', 1),
+('This is the third', 'food_porn_pic','Third Best cookbook of all time', 2);
 
 
 INSERT INTO RECIPE(INSTRUCTIONS,NAME,PIC, COOKBOOK_ID) VALUES

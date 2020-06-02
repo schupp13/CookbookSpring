@@ -1,14 +1,13 @@
 package com.cookbook.model;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.lang.NonNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -22,7 +21,9 @@ public class Recipe {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
+
 	@ManyToOne
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(name="cookbook_id")
 	@JsonIgnore
 	private Cookbook cookbook;
