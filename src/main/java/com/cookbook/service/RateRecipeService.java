@@ -3,10 +3,12 @@ package com.cookbook.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.cookbook.model.RateRecipe;
 import com.cookbook.repo.RateRecipeDaoContract;
 
+@Service
 public class RateRecipeService {
 
 	@Autowired
