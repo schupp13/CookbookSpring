@@ -10,7 +10,6 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.lang.NonNull;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="recipe")
@@ -21,11 +20,9 @@ public class Recipe {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
-
 	@ManyToOne
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(name="cookbook_id")
-//	@JsonIgnore
 	private Cookbook cookbook;
 	
 	@NonNull
@@ -33,14 +30,11 @@ public class Recipe {
 	private String instructions;
 	private String pic;
 	
-	
-	
-	
-
 	public Recipe() {
 		super();
-		// TODO Auto-generated constructor stub
+	
 	}
+	
 	public Recipe(int id, Cookbook cookbook, String name, String instructions, String pic) {
 		super();
 		this.id = id;
@@ -53,30 +47,39 @@ public class Recipe {
 	public int getId() {
 		return id;
 	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 	public Cookbook getCookbook() {
 		return cookbook;
 	}
+	
 	public void setCookbook(Cookbook cookbook) {
 		this.cookbook = cookbook;
 	}
+	
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	public String getDescription() {
 		return instructions;
 	}
+	
 	public void setDescription(String instructions) {
 		this.instructions = instructions;
 	}
+	
 	public String getPic() {
 		return pic;
 	}
+	
 	public void setPic(String pic) {
 		this.pic = pic;
 	}
@@ -98,6 +101,7 @@ public class Recipe {
 		result = prime * result + ((pic == null) ? 0 : pic.hashCode());
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

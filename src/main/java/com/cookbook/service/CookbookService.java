@@ -23,7 +23,6 @@ public class CookbookService {
 	}
 
 	public String deleteCookbookById(int id) {
-		// TODO Auto-generated method stub
 		 cd.deleteById(id);
 		return "User with id: " + id + " was deleted.";
 	}
@@ -33,14 +32,11 @@ public class CookbookService {
 	}
 
 	public Cookbook createCookbook(Cookbook cookbook) {
-		// TODO Auto-generated method stub
 		return cd.save(cookbook);
 	}
 
 	public List<Cookbook> getCookbooksByUserId(int id) {
 		return cd.getCookbooksByUserId(id);
 	}
-	
-	
 	
 }

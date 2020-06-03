@@ -12,7 +12,6 @@ import javax.persistence.Table;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="cookbook")
@@ -25,15 +24,11 @@ public class Cookbook {
 	@ManyToOne
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(name="user_id")
-//	@JsonIgnore
 	private User user;
-	
 	private String title;
 	private String description;
 	private String pic;
 	
-	
-
 	public Cookbook(int id, User user, String title, String description, String pic) {
 		super();
 		this.id = id;
@@ -42,37 +37,47 @@ public class Cookbook {
 		this.description = description;
 		this.pic = pic;
 	}
+	
 	public Cookbook() {
-		super();
-		// TODO Auto-generated constructor stub
+		super();	
 	}
+	
 	public int getId() {
 		return id;
 	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 	public User getUser() {
 		return user;
 	}
+	
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
 	public String getTitle() {
 		return title;
 	}
+	
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	
 	public String getDescription() {
 		return description;
 	}
+	
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
 	public String getPic() {
 		return pic;
 	}
+	
 	public void setPic(String pic) {
 		this.pic = pic;
 	}
@@ -83,6 +88,7 @@ public class Cookbook {
 		return "Cookbook [id=" + id + ", user=" + user + ", title=" + title + ", description=" + description + ", pic="
 				+ pic + "]";
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -94,6 +100,7 @@ public class Cookbook {
 		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

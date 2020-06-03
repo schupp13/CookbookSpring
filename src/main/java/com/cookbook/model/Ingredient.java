@@ -39,32 +39,40 @@ public class Ingredient {
 	
 	public Ingredient() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
+	
 	public int getId() {
 		return id;
 	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 	public Recipe getRecipe() {
 		return recipe;
 	}
+	
 	public void setRecipe(Recipe recipe) {
 		this.recipe = recipe;
 	}
+	
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	public String getAmount() {
 		return amount;
 	}
+	
 	public void setAmount(String amount) {
 		this.amount = amount;
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -75,6 +83,7 @@ public class Ingredient {
 		result = prime * result + ((recipe == null) ? 0 : recipe.hashCode());
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -103,6 +112,7 @@ public class Ingredient {
 			return false;
 		return true;
 	}
+	
 	@Override
 	public String toString() {
 		return "Ingredient [id=" + id + ", recipe=" + recipe + ", name=" + name + ", amount=" + amount + "]";
