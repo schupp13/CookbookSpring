@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import com.cookbook.model.RateRecipe;
-import com.cookbook.model.Recipe;
+
 
 public interface RateRecipeDaoContract extends JpaRepository<RateRecipe, Integer> {
 	@Query(value="select * from rate_recipe where user_id = ?1",

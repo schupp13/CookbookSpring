@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import com.cookbook.model.Ingredient;
-import com.cookbook.model.Recipe;
+
 
 
 public interface IngredientDaoContract extends JpaRepository<Ingredient, Integer> {
