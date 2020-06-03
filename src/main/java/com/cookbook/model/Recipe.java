@@ -25,7 +25,7 @@ public class Recipe {
 	@ManyToOne
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(name="cookbook_id")
-	@JsonIgnore
+//	@JsonIgnore
 	private Cookbook cookbook;
 	
 	@NonNull
