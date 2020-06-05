@@ -32,5 +32,9 @@ public class UserService {
 		ud.deleteById(id);
 		return "User with id: " + id + " was deleted.";
 	}
+	
+	public User login(String username, String password) {
+		return ud.login(username, password);
+	}
 
 }
