@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import io.jsonwebtoken.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,16 +20,19 @@ import net.minidev.json.JSONObject;
 import com.cookbook.model.User;
 import com.cookbook.service.*;
 @Controller
-@CrossOrigin(origins="*")
+@CrossOrigin
 public class AuthenticationController {
 	
 	@Autowired
 	private UserService us; 
 
-	@PostMapping("/{username}/{password}")
+	@GetMapping("/{username}/{password}")
 	public @ResponseBody String login(@PathVariable("username") String username, @PathVariable("password") String password) {
 		JSONObject ob = new JSONObject();
 		User user = us.login(username, password);
+		if (user == null) {
+			return "failed login";
+		}
 		String id = Integer.toString(user.getId());
 		Date date = new Date(System.currentTimeMillis());
 		Calendar cal = Calendar.getInstance();
