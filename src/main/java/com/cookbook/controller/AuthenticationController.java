@@ -31,7 +31,8 @@ public class AuthenticationController {
 		JSONObject ob = new JSONObject();
 		User user = us.login(username, password);
 		if (user == null) {
-			return "failed login";
+			ob.put("failed", "failed login");
+			return ob.toString();
 		}
 		String id = Integer.toString(user.getId());
 		Date date = new Date(System.currentTimeMillis());
