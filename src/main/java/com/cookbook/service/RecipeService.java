@@ -40,6 +40,11 @@ public class RecipeService {
 	public Recipe getRecipeById(int id) {
 		return rd.findById(id).orElse(null);
 	}
+
+	public List<Recipe> getRecipeByUserId(int id) {
+		
+		return rd.getRecipesByUserId(id);
+	}
 	
 
 	
