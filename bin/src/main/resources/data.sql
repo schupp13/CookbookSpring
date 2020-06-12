@@ -12,10 +12,10 @@ INSERT INTO COOKBOOK(DESCRIPTION,PIC,TITLE, USER_ID) VALUES
 ('This is a description', 'food_porn_pic','Forth cookbook of all time', 1),
 ('This is the third', 'food_porn_pic','Third Best cookbook of all time', 2);
 
-INSERT INTO RECIPE(INSTRUCTIONS,NAME,PIC, COOKBOOK_ID, USER_ID) VALUES
-  ('instructions for taco recipe', 'Tacos','food_pic', 1,1),
-('instructions for burger recipe', 'Burger','food_pic', 1, 1),
-('instructions for salmon recipe', 'Salmon','food_pic', 5,2);
+
+INSERT INTO RECIPE(INSTRUCTIONS,NAME,PIC, COOKBOOK_ID) VALUES
+  ('instructions for taco recipe', 'Tacos','food_pic', 1),
+('instructions for burger recipe', 'Burger','food_pic', 1);
 
 INSERT INTO INGREDIENT(AMOUNT,NAME,RECIPE_ID) VALUES
   ('1lb', 'Beef', 1),
