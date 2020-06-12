@@ -11,4 +11,9 @@ public interface RecipeDaoContract extends JpaRepository<Recipe, Integer> {
 			nativeQuery = true)
 	public List<Recipe> getRecipesByCookbookId(int id);
 	
+	
+	@Query(value="select * from Recipe r where user_id = ?1",
+			nativeQuery = true)
+	public List<Recipe> getRecipesByUserId(int id);
+	
 }

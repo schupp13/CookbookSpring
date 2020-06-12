@@ -41,6 +41,12 @@ public class RecipeController {
 		return rs.getRecipeByCookbook(id);
 	}
 	
+	
+	@GetMapping("/users/{id}")
+	public List<Recipe> getRecipeByUserId(@PathVariable int id){
+		return rs.getRecipeByUserId(id);
+	}
+	
 	@PostMapping("")
 	public Recipe createRecipe(@RequestBody Recipe recipe) {
 		return rs.createRecipe(recipe);
