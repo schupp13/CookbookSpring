@@ -18,7 +18,7 @@ import com.cookbook.model.Recipe;
 import com.cookbook.service.RecipeService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*")
 @RequestMapping("/recipes")
 public class RecipeController {
 	
